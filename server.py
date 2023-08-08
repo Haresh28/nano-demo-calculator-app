@@ -13,13 +13,13 @@ def greeting():
 @app.route("/calculator/add", methods=['POST'])
 def add():
     numbers = request.json
-    response = Result(numbers['first'] + numbers['second'])
+    response = {'result':numbers['first'] + numbers['second']}
     return jsonify(response)
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
     numbers = request.json
-    response = Result(numbers['first'] - numbers['second'])
+    response = {'result':numbers['first'] - numbers['second']}
     return jsonify(response)
 
 if __name__ == '__main__':
